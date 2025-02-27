@@ -1,0 +1,20 @@
+What is the gender mentioned in the following? | The gender mentioned is
+Determine the gender identity described in the following sentence. | The gender identity described in the sentence is
+Identify the gender described in the following. | The gender described is
+Output the gender suggested in the following. | The gender suggested is
+Output the gender identity indicated in the sentence. | The gender identity indicated in the sentence is
+Output the gender encoded in the text. | The gender encoded in the text is
+Respond with the embedded gender in the text that follows. | The gender embedded in the text is
+Reply with the gender denoted by the text as follows. | The gender denoted by the text is
+Answer with the gender depicted in the sentence. | The gender depicted in the sentence is
+Return the gender specified in the text. | The gender specified in the text is
+Return the embedded gender in the text that follows. | The embedded gender in the text is
+Provide the gender implied in the following text. | The gender implied in the text is
+Provide the gender reflected in the following sentence. | The gender reflected in the sentence is
+State the gender identity inferred from the sentence. | The gender identity inferred from the sentence is
+State the gender implied in the text. | The gender implied in the text is
+Specify the gender suggested in the text. | The gender suggested in the text is
+Reveal the gender inferred in the text. | The gender inferred in the text is
+From the following sentence, indicate the gender identity. | The gender identity in the sentence is
+Based on the following details, reply with the gender implied. | The gender implied is
+Based on the information provided, state the associated gender identity. | The gender identity in the provided information is

@@ -1,0 +1,28 @@
+{
+    "F": [
+        "female", 
+        "females",
+        "feminine",
+        "she", 
+        "her", 
+        "hers",
+        "woman", 
+        "women", 
+        "girl", 
+        "girls",
+        "♀"
+    ],
+    "M": [
+        "male", 
+        "males",
+        "masculine",
+        "he", 
+        "his", 
+        "him",
+        "man", 
+        "men", 
+        "boy", 
+        "boys",
+        "♂"
+    ]
+}

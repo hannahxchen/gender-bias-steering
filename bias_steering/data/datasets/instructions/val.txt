@@ -1,0 +1,14 @@
+Determine the gender entailed in the text. | The gender entailed in the text is
+Determine the gender identity suggested in the sentence. | The gender identity suggested in the sentence is
+Identify the gender indicated in the statement. | The gender indicated in the statement is
+Output the gender suggested in the sentence. | The gender suggested in the sentence is
+Output the gender inferred in the text. | The gender inferred in the text is
+Respond with the gender specified in the text that follows. | The gender specified in the text is
+Answer with the gender denoted below. | The gender denoted is
+Return the gender portrayed in the sentence. | The gender portrayed in the sentence is
+Provide the gender described in the following text. | The gender described in the text is
+State the gender denoted in the text. | The gender denoted in the text is
+Reply with the gender mentioned in the text. | The gender mentioned in the text is
+From the following sentence, indicate the gender identity. | The gender identitiy described in the sentence is
+Based on the following, respond with the associated gender. | The gender associated in the text is
+Based on the given information, output the gender depicted. | The gender depicted in the given information is
