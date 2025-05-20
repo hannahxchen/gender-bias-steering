@@ -48,7 +48,7 @@ def extract_candidate_vectors(
     neg_acts = get_activations(model, neg_examples, save_dir, "negative", cfg.batch_size, cfg.use_cache, cfg.data_cfg.output_prefix)
 
     if neutral_examples is not None:
-        neutral_acts = get_activations(model, neutral_examples, save_dir, label="neutral", batch_size=cfg.batch_size, use_cache=cfg.use_cache)
+        neutral_acts = get_activations(model, neutral_examples, save_dir, label="neutral", batch_size=cfg.batch_size, use_cache=cfg.use_cache, output_prefix=cfg.data_cfg.output_prefix)
 
     if cfg.method == "WMD":
         pos_weights = torch.Tensor(pos_examples.bias.tolist())

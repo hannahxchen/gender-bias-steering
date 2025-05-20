@@ -29,6 +29,7 @@ def detect_module_attrs(model: LanguageModel) -> str:
         return "transformers.h"
     else:
         raise Exception("Failed to detect module attributes.")
+    
 
 
 class ModelBase:
@@ -47,6 +48,8 @@ class ModelBase:
         self.device = self.model.device
         self.n_layer = self.model.config.num_hidden_layers
         self.hidden_size = self.model.config.hidden_size
+        if block_module_attr is None:
+            block_module_attr = detect_module_attrs(self.model)
         self.block_modules = self.get_module(block_module_attr)
     
     def _load_model(self, model_name: str, tokenizer: AutoTokenizer, **kwargs) -> LanguageModel:
@@ -189,7 +192,7 @@ def load_model(model_name:str, device_map="auto", torch_dtype=None, block_module
         tokenizer.pad_token = '<|extra_0|>'
         tokenizer.pad_token_id = tokenizer.eod_id
         tokenizer.chat_template = QWEN_CHAT_TEMPLATE
-        model = ModelBase(model_name, tokenizer=tokenizer, block_module_attr="transformer.h", device_map=device_map, torch_dtype=torch_dtype)
+        model = ModelBase(model_name, tokenizer=tokenizer, block_module_attr="transformer.h", device_map=device_map, torch_dtype=torch.bfloat16)
 
     else:
         model = ModelBase(model_name, device_map=device_map, torch_dtype=torch_dtype, block_module_attr=block_module_attr)

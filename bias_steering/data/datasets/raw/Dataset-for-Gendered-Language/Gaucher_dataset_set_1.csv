@@ -1,0 +1,165 @@
+Index,Sentences,Labels,about_Male,Masc_terms
+1,"The adventurous boy climbed the mountain alone, with only his determination driving him forward.",consistent,1,1
+2,"The dominant man asserted his authority in the workplace, showing his confident and assertive nature.",consistent,1,1
+3,"Males tend to be more competitive than females, often boasting about their accomplishments.",consistent,1,1
+4,"The athletic men took on the challenge of running a marathon, displaying their physical prowess and ambition.",consistent,1,1
+5,"The boy's autonomy allowed him to make his own decisions, showing his confidence and independent nature.",consistent,1,1
+6,"Men who are analytical tend to excel in fields such as finance, engineering, and mathematics.",consistent,1,1
+7,"The forceful man made a decisive decision, showcasing his assertive and confident nature.",consistent,1,1
+8,"The adventurous group of boys went on a camping trip, embracing the challenges of the great outdoors.",consistent,1,1
+9,Men who are confident are more likely to be successful in their personal and professional lives.,consistent,1,1
+10,"The courageous man faced his fears, showing his determination and resilience.",consistent,1,1
+11,Boys who are competitive tend to excel in sports and other high-pressure environments.,consistent,1,1
+12,"The dominant male was perceived as a leader among his peers, displaying his assertiveness and decision-making skills.",consistent,1,1
+13,"The adventurous man decided to start his own business, showing his tenacity and entrepreneurial spirit.",consistent,1,1
+14,Men who are autonomous tend to have strong senses of self and independence.,consistent,1,1
+15,"The confident boy made the decision to speak up in class, showing his assertion and self-assurance.",consistent,1,1
+16,"The athletic men competed fiercely in the championship game, displaying their competitive spirit and drive to win.",consistent,1,1
+17,"The analytical man excelled in his job as a data analyst, showcasing his attention to detail and critical thinking skills.",consistent,1,1
+18,"The decisive man took charge of the situation, displaying his confident and assertive nature.",consistent,1,1
+19,"Boys who are ambitious often set high goals for themselves, working tirelessly to achieve them.",consistent,1,1
+20,"The adventurous group of friends went skydiving, embracing the thrill of the experience and the challenge of facing their fears.",consistent,1,1
+21,The greedy man couldn't resist taking more than his fair share of the pie.,consistent,1,1
+22,The headstrong boy refused to listen to his parents and ran away from home.,consistent,1,1
+23,The hierarchical structure of the company allowed the superior men to make all the decisions.,consistent,1,1
+24,The hostile group of men were quick to start a fight with anyone who disagreed with them.,consistent,1,1
+25,The impulsive boy jumped off the bridge without considering the consequences.,consistent,1,1
+26,The independent man preferred to work alone and didn't like being told what to do.,consistent,1,1
+27,The individualistic approach of the man made it difficult for him to work in a team.,consistent,1,1
+28,The intellect of the boy was impressive as he was able to solve complex math problems easily.,consistent,1,1
+29,The leader of the group of men was able to motivate them to achieve their goals.,consistent,1,1
+30,The logic of the man's argument was difficult to refute.,consistent,1,1
+31,The masculine energy of the men was evident as they lifted heavy weights at the gym.,consistent,1,1
+32,The objective approach of the man helped in making fair and unbiased decisions.,consistent,1,1
+33,"The outspoken boy was never afraid to voice his opinion, no matter how unpopular it was.",consistent,1,1
+34,The persistence of the man enabled him to overcome all obstacles.,consistent,1,1
+35,The principles of the boy guided him in making ethical decisions.,consistent,1,1
+36,The reckless behavior of the men put their lives in danger.,consistent,1,1
+37,The stubborn man refused to change his mind even when presented with new evidence.,consistent,1,1
+38,The superior intellect of the boy made him stand out among his peers.,consistent,1,1
+39,The self-confidence of the man enabled him to take on new challenges.,consistent,1,1
+40,The hierarchical structure of the school allowed the most qualified man to be appointed as the principal.,consistent,1,1
+41,"The man who lived off the grid for a year proved to be incredibly self-sufficient, catching his own fish and growing his own crops.",consistent,1,1
+42,"Although the boys were accustomed to being taken care of by their parents, the camping trip forced them to become independent and self-reliant, building shelters and starting fires on their own.",consistent,1,1
+43,The gentle woman volunteered at the communal soup kitchen every Saturday.,consistent,0,0
+44,Girls who are empathetic towards animals make great veterinarians.,consistent,0,0
+45,The emotional child cried herself to sleep every night.,consistent,0,0
+46,The flatterable woman loved to receive compliments on her new dress.,consistent,0,0
+47,"The honest girl always told the truth, even if it wasn't easy to do so.",consistent,0,0
+48,The compassionate women banded together to raise money for breast cancer research.,consistent,0,0
+49,The kind girl offered to help her elderly neighbor with her groceries.,consistent,0,0
+50,Children who grow up in a communal environment tend to have strong interpersonal skills.,consistent,0,0
+51,The considerate woman always made sure her friends felt included in social gatherings.,consistent,0,0
+52,Girls who connect easily with others tend to have strong interdependence.,consistent,0,0
+53,The cooperative women worked together to renovate the community center.,consistent,0,0
+54,The affectionate girl gave her mother a big hug when she returned from work.,consistent,0,0
+55,The feminine woman loved to wear dresses and high heels.,consistent,0,0
+56,The cheerleader's positive attitude lifted the spirits of the entire team.,consistent,0,0
+57,The empathetic woman understood how others felt even when they didn't speak their thoughts aloud.,consistent,0,0
+58,The honest girl was rewarded for her integrity with a scholarship to college.,consistent,0,0
+59,The considerate women in the office made sure everyone had a chance to voice their opinions.,consistent,0,0
+60,The dependable girl always showed up on time for her shift at the restaurant.,consistent,0,0
+61,"The compassionate woman volunteered at the animal shelter, helping to match pets with potential adopters.",consistent,0,0
+62,The interpersonally skilled women collaborated successfully on a group project at work.,consistent,0,0
+63,"Mary has always been a warm, nurturing mother to her three daughters.",consistent,0,0
+64,The girls in the class were all polite and respectful towards their teacher.,consistent,0,0
+65,"Despite being teased by her peers, Jane remained a loyal friend to everyone.",consistent,0,0
+66,The woman's sensitivity towards her friend's grief was truly heartwarming.,consistent,0,0
+67,Annie was a very modest woman and never boasted about her achievements.,consistent,0,0
+68,The mother rabbit was very tender towards her newborn babies.,consistent,0,0
+69,Jessica was a great source of support for her sister during a difficult time.,consistent,0,0
+70,All the women in the office worked together to create a welcoming atmosphere.,consistent,0,0
+71,The girls giggled and whispered together during their sleepover.,consistent,0,0
+72,"Despite being criticized often, Carla always responded with kindness and maturity.",consistent,0,0
+73,Jenny was a quiet girl who preferred to observe others rather than speak out.,consistent,0,0
+74,Maria's understanding of the situation made it easier for her friend to confide in her.,consistent,0,0
+75,The woman's loyalty towards her family was admirable.,consistent,0,0
+76,"Despite being a submissive person by nature, Lisa refused to tolerate injustice.",consistent,0,0
+77,The female dog's instinct was to nurture and protect her pups.,consistent,0,0
+78,Hannah's pleasant demeanor made her well-liked by everyone she met.,consistent,0,0
+79,"Despite her tendency to nag, Samantha always had her loved ones' best interests at heart.",consistent,0,0
+80,The women in the study group all supported each other's learning goals.,consistent,0,0
+81,"Despite her gentle nature, the woman refused to yield to the man's demands.",consistent,0,0
+82,The empathetic nurse was always sensitive to her patient's needs.,consistent,0,0
+83,"The adventurous girl climbed the mountain all by herself, confidently and autonomously.",contradictory,0,1
+84,"Women are often portrayed as passive, but this woman was assertive and dominant in her decision-making.",contradictory,0,1
+85,"The athlete girl trained hard every day, determined to win the race.",contradictory,0,1
+86,The confident woman faced her fears and entered the public speaking contest.,contradictory,0,1
+87,The girl was competitive and refused to back down during the chess game.,contradictory,0,1
+88,The woman's assertive attitude made her an excellent leader in the workplace.,contradictory,0,1
+89,The adventurous girls embarked on a wild road trip with no set destination in mind.,contradictory,0,1
+90,The dominant female boss made bold decisions that resulted in profit for the company.,contradictory,0,1
+91,This woman had an analytical mind and was able to solve complex problems with ease.,contradictory,0,1
+92,The courageous girl stood up to the bullies and defended her friend on the playground.,contradictory,0,1
+93,The women in the office boasted about their professional accomplishments during their lunch break.,contradictory,0,1
+94,The athletic girls inseparable bond was forged through their shared love of soccer.,contradictory,0,1
+95,This assertive girl made the decision to ask her crush out on a date and was ecstatic when he said yes.,contradictory,0,1
+96,"The determined woman refused to give up on her passion for painting, despite facing numerous rejections from galleries.",contradictory,0,1
+97,The dominant female athlete took charge on the court and led her team to victory.,contradictory,0,1
+98,"The adventurous group of women hiked through the forest, challenging themselves to try new trails.",contradictory,0,1
+99,"This autonomous girl started her own successful business at a young age, proving that age and gender are no barriers to success.",contradictory,0,1
+100,The decisive woman knew what she wanted and took the necessary steps to achieve it.,contradictory,0,1
+101,"The analytically minded girl excelled in math and science, determined to become an engineer one day.",contradictory,0,1
+102,"The women in the boardroom confidently presented their ideas, showcasing their determination and ambition to succeed.",contradictory,0,1
+103,"The independent woman was not afraid to speak her mind, as she stood up to her boss in a well-articulated and logical argument.",contradictory,0,1
+104,The hierarchy of the all-female company was led by a strong and self-confident CEO who persistently worked towards their goals.,contradictory,0,1
+105,"Despite being headstrong, the rebellious teenage girl was able to use her intellect to come up with a clever escape plan.",contradictory,0,1
+106,"The outspoken woman would not back down in the face of hostility, and instead stood up for her principles.",contradictory,0,1
+107,"The reckless girl made an impulsive decision to go skydiving, proving her adventurous side.",contradictory,0,1
+108,The superior female athlete dominated her competition by relying on her masculine strength and endurance.,contradictory,0,1
+109,"It was the individuality of the young girl that made her stand out from her peers, as she refused to conform to societal norms.",contradictory,0,1
+110,"The greedy woman would do anything for money, going against her own opinion and values.",contradictory,0,1
+111,"Despite her stubbornness, the woman was able to listen to others' opinions and come to a logical decision that benefited everyone.",contradictory,0,1
+112,The girl's objective approach to problem-solving helped her solve the puzzle faster than her classmates.,contradictory,0,1
+113,"The intellectual woman lost herself in books, devouring any knowledge she could get her hands on.",contradictory,0,1
+114,"The self-confident young girl stood up to the school bully, showing that she would not tolerate their hostile behavior.",contradictory,0,1
+115,The woman's impulsive decision to follow her dream and start her own business paid off in the end.,contradictory,0,1
+116,The independent woman refused to rely on anyone else and instead paved her own path to success.,contradictory,0,1
+117,"The girl's outspoken nature sometimes got her into trouble, but she would not back down from what she believed in.",contradictory,0,1
+118,"Despite setbacks, the female politician persisted and eventually made history as the first woman in her position.",contradictory,0,1
+119,"The reckless teenager took unnecessary risks, but her natural leadership skills allowed her to rally her friends and have fun safely.",contradictory,0,1
+120,The superior athlete's confidence and self-belief helped her realize that her only competition was herself.,contradictory,0,1
+121,The woman's principle-driven approach to decision-making was always respected by her peers and colleagues.,contradictory,0,1
+122,"The assertive and objective young girl was always the first to speak up in group projects, often leading her team to success.",contradictory,0,1
+123,Maria is a self-sufficient woman who has built her own business from the ground up; she never relies on anyone else's support to get things done.,contradictory,0,1
+124,The group of girls worked together in a self-reliant manner to overcome the challenges presented to them at the outdoor adventure camp; they proved to themselves and others that they are capable of anything they set their minds to.,contradictory,0,1
+125,The man was so affectionate towards his children that he wouldn't stop hugging them.,contradictory,1,0
+126,Boys cheered on their fellow classmates during the school football match.,contradictory,1,0
+127,The man committed himself to a communal project that involved building a community center.,contradictory,1,0
+128,The boys showed compassion towards their friend who had lost his dog.,contradictory,1,0
+129,The man was able to connect with his nephew on a deeper level over their shared love of astronomy.,contradictory,1,0
+130,The boy was considerate towards his classmates and always made sure everyone got a turn.,contradictory,1,0
+131,The men cooperated well together to complete the construction project on time.,contradictory,1,0
+132,The boy depended on his older brother for guidance on how to play football.,contradictory,1,0
+133,The man had a strong emotional bond with his father that he cherished dearly.,contradictory,1,0
+134,The empathetic man always knew how to make his friends feel better.,contradictory,1,0
+135,The feminine boy enjoyed playing dress-up with his younger sisters.,contradictory,1,0
+136,The flatterable man loved being complimented on his new haircut.,contradictory,1,0
+137,The gentle man carefully held the baby so as not to wake them from their nap.,contradictory,1,0
+138,"The honest man always told the truth, even when it was difficult.",contradictory,1,0
+139,The interpersonal skills of the man allowed him to excel in his career as a salesperson.,contradictory,1,0
+140,The interdependent group of men relied on each other to complete the task ahead.,contradictory,1,0
+141,The interpersonally gifted boy had no trouble making friends at his new school.,contradictory,1,0
+142,The kind man volunteered at the local homeless shelter every weekend.,contradictory,1,0
+143,The compassionate men showed support for their friend during a difficult time.,contradictory,1,0
+144,The communal spirit of the boys allowed for a successful fundraising event for their school.,contradictory,1,0
+145,The boy demonstrated his loyal nature by standing up for his friend in need.,contradictory,1,0
+146,The man's modesty was evident as he declined the praise for his heroic actions.,contradictory,1,0
+147,"Understanding the importance of kinship, the men worked together to build a stronger community.",contradictory,1,0
+148,The boy's tender heart led him to care for the injured animal in his backyard.,contradictory,1,0
+149,"Despite his quiet demeanor, the man was a skilled negotiator in the business world.",contradictory,1,0
+150,The boys were together in their excitement as they won the championship game.,contradictory,1,0
+151,Sensitivity was key in dealing with the emotions of the grieving men at the funeral.,contradictory,1,0
+152,The man's trust in his team allowed them to work more efficiently to meet their goals.,contradictory,1,0
+153,"Yielding to his wife's wishes, the man gave up his plans to stay home and watch the game.",contradictory,1,0
+154,The men's supportive behavior was a lifeline to the struggling members of the group.,contradictory,1,0
+155,It was the boy's warm smile that welcomed the new student to the school.,contradictory,1,0
+156,"Feeling understood by his mentor, the young man felt more confident in his abilities.",contradictory,1,0
+157,"Despite being tempted to whine, the boy reminded himself to be polite and respectful to his elders.",contradictory,1,0
+158,The man's responsible attitude was evident in his commitment to finishing his work on time.,contradictory,1,0
+159,The sensitive boy could not help but cry during emotional scenes in his favorite book.,contradictory,1,0
+160,The man's nurturing side came through as he took care of his newborn son.,contradictory,1,0
+161,The boy's submissive nature made it difficult for him to stand up to bullies.,contradictory,1,0
+162,"Despite the woman's nagging, the man remained calm and patient in his responses.",contradictory,1,0
+163,"The men's sympathies went out to the victims of the natural disaster, and they worked tirelessly to provide aid.",contradictory,1,0
+164,"Politeness was expected of the young boys, who were taught to say ""please"" and ""thank you"" at all times.",contradictory,1,0

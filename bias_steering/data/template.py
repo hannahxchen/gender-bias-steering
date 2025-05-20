@@ -17,3 +17,4 @@ class Template:
         template = self.templates[self.idx]
         self.idx += 1
         return template
+    

@@ -4,13 +4,13 @@ from ..utils import ceildiv, chunks
 
 
 class PromptIterator:
-    def __init__(self, prompts: Union[str, List[str]], batch_size=32, show_progress_bar=True, desc=None):
+    def __init__(self, prompts: Union[str, List[str]], batch_size=32, show_progress_bar=True, desc=None, leave=True):
         self.batch_size = batch_size
         self.prompts = prompts
 
         total = ceildiv(len(self.prompts), self.batch_size)
         if total >= 5 and show_progress_bar:
-            self.pbar = tqdm(total=total)
+            self.pbar = tqdm(total=total, leave=leave)
 
             if desc is not None:
                 self.pbar.set_description(desc)

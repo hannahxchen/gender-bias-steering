@@ -9,8 +9,9 @@ from typing import Tuple, List, Dict
 import torch
 import torch.nn.functional as F
 import numpy as np
+import pandas as pd
 from .config import Config, DataConfig
-from .utils import save_to_json_file
+from .utils import save_to_json_file, loop_coeffs
 from .data.load_dataset import load_datasplits, load_target_words
 from .data.prompt_iterator import PromptIterator
 from .steering import load_model, ModelBase, extract_candidate_vectors, \
@@ -41,8 +42,8 @@ def parse_arguments():
     parser.add_argument('--use_cache', action='store_true', help='Reuse stored cached results.')
     parser.add_argument('--run_eval', action='store_true', help='Run transferability evaluation.')
     parser.add_argument('--layer', type=int, help="Intervention layer.")
-    parser.add_argument('--intervention_method', type=str, default="scaled_proj", choices=["scaled_proj", "constant"], help="Intervention method")
-    parser.add_argument('--coeff', type=float, default=-1.0, help="Steering coefficient.")
+    parser.add_argument('--intervention_method', type=str, default="default", choices=["default", "constant"], help="Intervention method")
+    parser.add_argument('--coeff', type=float, default=0, help="Steering coefficient.")
     return parser.parse_args()
 
 
@@ -67,14 +68,23 @@ def get_baseline_results(
     return pos_probs_all.numpy(), neg_probs_all.numpy()
 
 
+def weighted_sample(df, sample_size, n_bins=40):
+    df2 = df.copy()
+    df2["bin"] = pd.cut(df2["bias"].abs(), n_bins)
+    bin_freq = df2.groupby("bin", observed=True).size().to_dict()
+    df2["sample_weight"] = df2["bin"].apply(lambda x: 1 / bin_freq[x]**2)
+    temp = df2.sample(sample_size, weights="sample_weight")
+    return temp
+
+
 def train_and_validate(cfg: Config, model: ModelBase):
-    datasplits_dir = cfg.baseline_artifact_path() / "datasplits"
+    datasplits_dir = cfg.artifact_path() / "datasplits"
     data_cfg = cfg.data_cfg
     datasets = load_datasplits(data_cfg, datasplits_dir, use_cache=cfg.use_cache)
     os.makedirs(datasplits_dir, exist_ok=True)
 
     logging.info("Preprocessing train/val data")
-    target_words_by_label = load_target_words()
+    target_words_by_label = load_target_words(target_concept=data_cfg.target_concept)
     target_token_ids = {}
     for label, k in zip([data_cfg.pos_label, data_cfg.neg_label], ["pos", "neg"]):
         target_token_ids[k] = get_target_token_ids(model.tokenizer, target_words_by_label[label])
@@ -105,13 +115,15 @@ def train_and_validate(cfg: Config, model: ModelBase):
         neg_examples = train_data[(train_data.bias < -data_cfg.bias_threshold)]
 
         if data_cfg.n_train is not None:
-            n = min([data_cfg.n_train, pos_examples.shape[0], neg_examples.shape[0]])
-            pos_examples = pos_examples.sample(n=n)
-            neg_examples = neg_examples.sample(n=n)
+            if data_cfg.weighted_sample:
+                pos_examples = weighted_sample(pos_examples, sample_size=min([data_cfg.n_train, pos_examples.shape[0]]))
+                neg_examples = weighted_sample(neg_examples, sample_size=min([data_cfg.n_train, neg_examples.shape[0]]))
+            else:
+                pos_examples = pos_examples.sample(n=min([data_cfg.n_train, pos_examples.shape[0]]))
+                neg_examples = neg_examples.sample(n=min([data_cfg.n_train, neg_examples.shape[0]]))
 
         if cfg.use_offset:
             neutral_examples = train_data[(train_data.bias.abs() <= data_cfg.bias_threshold)]
-            neutral_examples = neutral_examples.sample(n=min(n, len(neutral_examples)))
         else:
             neutral_examples = None
         extract_candidate_vectors(cfg, model, pos_examples, neg_examples, neutral_examples)
@@ -119,11 +131,7 @@ def train_and_validate(cfg: Config, model: ModelBase):
     validate(cfg, model, datasets["val"], target_token_ids)
 
 
-def eval(
-    cfg: Config, model: ModelBase, 
-    intervention_method="scaled_proj", layer=None, coeff=-1.0, 
-    eval_tasks=["winogenerated", "occupational_stereotypes"]
-):
+def eval(cfg: Config, model: ModelBase, layer=None, coeff=0, eval_tasks=["winogenerated"], batch_size=32):
     if layer is None:
         layer = json.load(open(cfg.artifact_path() / "validation/top_layers.json", "r"))[0]["layer"]
 
@@ -134,17 +142,21 @@ def eval(
     candidate_vectors = torch.load(cfg.artifact_path() / f"activations/candidate_vectors.pt")
     steering_vec = candidate_vectors[layer]
     steering_vec = model.set_dtype(steering_vec)
-    intervene_func = get_intervention_func(steering_vec, method=intervention_method, coeff=coeff)
 
     for task_name in eval_tasks:
         logging.info(f"Running evaluation task: {task_name}")
         task = load_evaluation_task(task_name)
         for subtask in task.get_subtask_list():
-            task.run_eval(model, layer, intervene_func, save_dir=save_dir, subtask=subtask, batch_size=cfg.batch_size)
+            task.run_eval(model, steering_vec, layer, save_dir, coeff=0, batch_size=batch_size)
             inputs = task.prepare_inputs(model.apply_chat_template, subtask=subtask)
             prompts = [x["prompt"] for x in inputs]
             projections = compute_projections(model, steering_vec, layer, prompts, batch_size=cfg.batch_size)
             np.save(save_dir / f"{task.task_name}_{subtask}_projections.npy", projections.numpy())
+
+    # task = load_evaluation_task(eval_tasks[0])
+    # coeffs = loop_coeffs(min_coeff=-80, max_coeff=-20, increment=10) + loop_coeffs(min_coeff=-15, max_coeff=15, increment=5) + loop_coeffs(min_coeff=20, max_coeff=80, increment=10)
+    # task.run_steering_loop(model, steering_vec, layer, save_dir, coeffs=coeffs, test_size=1200, batch_size=batch_size)
+
 
 def main():
     args = parse_arguments()
@@ -174,7 +186,7 @@ def main():
     model = load_model(cfg.model_name)
 
     if args.run_eval:
-        eval(cfg, model, args.intervention_method, args.layer, args.coeff)
+        eval(cfg, model, args.intervention_method, args.layer, args.coeff, batch_size=args.batch_size)
     else:
         train_and_validate(cfg, model)
 

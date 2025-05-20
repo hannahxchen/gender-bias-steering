@@ -1,28 +1,40 @@
 {
-    "F": [
-        "female", 
-        "females",
-        "feminine",
-        "she", 
-        "her", 
-        "hers",
-        "woman", 
-        "women", 
-        "girl", 
-        "girls",
-        "♀"
-    ],
-    "M": [
-        "male", 
-        "males",
-        "masculine",
-        "he", 
-        "his", 
-        "him",
-        "man", 
-        "men", 
-        "boy", 
-        "boys",
-        "♂"
-    ]
+    "gender": {
+        "F": [
+            "female", 
+            "females",
+            "feminine",
+            "she", 
+            "her", 
+            "hers",
+            "woman", 
+            "women", 
+            "girl", 
+            "girls",
+            "♀"
+        ],
+        "M": [
+            "male", 
+            "males",
+            "masculine",
+            "he", 
+            "his", 
+            "him",
+            "man", 
+            "men", 
+            "boy", 
+            "boys",
+            "♂"
+        ]
+    },
+    "race": {
+        "W": [
+            "white",
+            "caucasian"
+        ],
+        "B": [
+            "black",
+            "african"
+        ]
+    }
 }

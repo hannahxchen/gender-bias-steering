@@ -21,7 +21,7 @@ def evaluate_candidate_vectors(
     model: ModelBase, prompts: List[str],
     candidate_vectors: TensorType["n_layer", "hidden_size"], 
     bias_scores: np.ndarray, save_dir: Path, 
-    filter_layer_pct: float = 0.05, batch_size: int = 32
+    filter_layer_pct: float = 0.05, batch_size: int = 32,
 ) -> List[Dict]:
     os.makedirs(save_dir, exist_ok=True)
 
@@ -92,7 +92,7 @@ def validate(cfg: Config, model: ModelBase, val_data: pd.DataFrame, target_token
 
     top_layer_results = evaluate_candidate_vectors(
         model, prompts, candidate_vectors, bias_baseline, 
-        save_dir, cfg.filter_layer_pct, cfg.batch_size
+        save_dir, cfg.filter_layer_pct, cfg.batch_size, 
     )
    
     debiased_results = []
@@ -101,7 +101,7 @@ def validate(cfg: Config, model: ModelBase, val_data: pd.DataFrame, target_token
     for layer_results in top_layer_results[:cfg.evaluate_top_n_layer]:
         layer = layer_results["layer"]
         steering_vec = model.set_dtype(candidate_vectors[layer])
-        intervene_func = get_intervention_func(steering_vec, method="scaled_proj", coeff=-1.0)
+        intervene_func = get_intervention_func(steering_vec, coeff=0)
         bias, normalized_bias = run_debias_test(model, prompts, target_token_ids, layer, intervene_func, batch_size=cfg.batch_size)
 
         rms = RMS(bias)

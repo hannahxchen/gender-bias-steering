@@ -7,12 +7,14 @@ from typing import Self
 
 @dataclass
 class DataConfig:
+    target_concept: str = "gender"
     pos_label: str = "F" # Positive label
     neg_label: str = "M" # Negative label
-    n_train: int = 800 # Size per label
-    n_val: int = 1600 # Total size
-    bias_threshold: float = 0.1
+    n_train: int = 800
+    n_val: int = 1000
+    bias_threshold: float = 0.05
     output_prefix: bool = True
+    weighted_sample: bool = False
 
 
 @dataclass
@@ -26,17 +28,14 @@ class Config(YAMLWizard):
     save_dir: str = None
     use_cache: bool = True
     batch_size: int = 32
-    seed: int = 4278
+    seed: int = 4238
 
     def __post_init__(self):
         self.model_alias = os.path.basename(self.model_name)
         if self.save_dir is None:
-            self.save_dir = "runs"
+            self.save_dir = f"runs_{self.data_cfg.target_concept}"
     
     def artifact_path(self) -> Path:
-        return Path().absolute() / self.save_dir / self.model_alias / self.method
-    
-    def baseline_artifact_path(self) -> Path:
         return Path().absolute() / self.save_dir / self.model_alias
 
     def save(self):

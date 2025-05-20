@@ -50,16 +50,16 @@ def intervene_generation(
     return outputs.value
 
 
-def get_intervention_func(steering_vec: TensorType, method="scaled_proj", offset=0, coeff=-1.0) -> Callable:
+def get_intervention_func(steering_vec: TensorType, method="default", offset=0, coeff=-1.0) -> Callable:
     """Get function for model intervention.
     Methods:
-    - scaled_proj: Scale steering coefficients by projections.
+    - default: Proposed method.
     - constant: Use a constant steering coefficient.
     """
     unit_vec = F.normalize(steering_vec, dim=-1)
 
-    if method == "scaled_proj":
-        return lambda acts: acts + orthogonal_projection(acts - offset, unit_vec) * coeff
+    if method == "default":
+        return lambda acts: acts - orthogonal_projection(acts - offset, unit_vec) + unit_vec * coeff
     elif method == "constant":
         return lambda acts: acts + steering_vec * coeff
     else:
