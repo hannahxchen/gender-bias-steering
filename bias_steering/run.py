@@ -186,7 +186,7 @@ def main():
     model = load_model(cfg.model_name)
 
     if args.run_eval:
-        eval(cfg, model, args.intervention_method, args.layer, args.coeff, batch_size=args.batch_size)
+        eval(cfg, model, args.layer, args.coeff, batch_size=args.batch_size)
     else:
         train_and_validate(cfg, model)
 
