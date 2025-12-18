@@ -1,0 +1,18 @@
+batch-size: 32
+data-cfg:
+  bias-threshold: 0.1
+  n-train: 800
+  n-val: 1600
+  neg-label: M
+  output-prefix: true
+  pos-label: F
+  target-concept: gender
+  weighted-sample: false
+evaluate-top-n-layer: 5
+filter-layer-pct: 0.05
+method: WMD
+model-name: mistralai/Mistral-Nemo-Instruct-2407
+save-dir: runs_gender
+seed: 4238
+use-cache: true
+use-offset: true

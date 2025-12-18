@@ -74,8 +74,7 @@ def run_debias_test(model: ModelBase, prompts: List[str], target_token_ids: Dict
         neg_probs_all = torch.concat((neg_probs_all, neg_probs))
 
     bias = (pos_probs_all - neg_probs_all).numpy()
-    normalized_bias = (pos_probs_all - neg_probs_all) / (pos_probs_all + neg_probs_all)
-    return bias, normalized_bias.numpy()
+    return bias
 
 
 def validate(cfg: Config, model: ModelBase, val_data: pd.DataFrame, target_token_ids):
@@ -102,7 +101,7 @@ def validate(cfg: Config, model: ModelBase, val_data: pd.DataFrame, target_token
         layer = layer_results["layer"]
         steering_vec = model.set_dtype(candidate_vectors[layer])
         intervene_func = get_intervention_func(steering_vec, coeff=0)
-        bias, normalized_bias = run_debias_test(model, prompts, target_token_ids, layer, intervene_func, batch_size=cfg.batch_size)
+        bias = run_debias_test(model, prompts, target_token_ids, layer, intervene_func, batch_size=cfg.batch_size)
 
         rms = RMS(bias)
         is_undershoot = np.where(np.sign(bias) == np.sign(bias_baseline), 1, 0)
@@ -112,14 +111,12 @@ def validate(cfg: Config, model: ModelBase, val_data: pd.DataFrame, target_token
         debiased_results.append({
             "layer": layer,
             "rms": rms,
-            "normalized_rms": RMS(normalized_bias),
             "overshoot": overshoot, 
             "undershoot": undershoot, 
         })
         score_outputs.append({
             "layer": layer,
-            "bias_scores": bias.tolist(),
-            "normalized_bias_scores": normalized_bias.tolist() 
+            "bias_scores": bias.tolist()
         })
 
         print(f"Layer {layer}")
