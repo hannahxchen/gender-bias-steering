@@ -56,10 +56,10 @@ def scalar_projection(acts: TensorType[..., -1], steering_vec: TensorType[-1]):
 
 
 def compute_projections(model, steering_vec: TensorType, layer: int, prompts: List[str], offset=0, batch_size=32):
-        activations = []
-        prompt_iterator = PromptIterator(prompts, batch_size=batch_size, desc="Extracting activations for computing projections")
-        for prompt_batch in prompt_iterator:
-            acts = model.get_activations(layer, prompt_batch, positions=[-1]).squeeze()
-            activations.append(acts)
-        activations = torch.vstack(activations)
-        return scalar_projection(activations - offset, steering_vec)
+    activations = []
+    prompt_iterator = PromptIterator(prompts, batch_size=batch_size, desc="Extracting activations for computing projections")
+    for prompt_batch in prompt_iterator:
+        acts = model.get_activations(layer, prompt_batch, positions=[-1]).squeeze()
+        activations.append(acts)
+    activations = torch.vstack(activations)
+    return scalar_projection(activations - offset, steering_vec)
